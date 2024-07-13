@@ -1,4 +1,4 @@
-import { ApiContext, Users } from 'types'
+import { ApiContext, User } from 'types'
 import { fetcher } from 'utils'
 
 export type SigninParams = {
@@ -8,7 +8,7 @@ export type SigninParams = {
 
 const signin = async (
   context: ApiContext,
-  params: SigninParams
+  params: SigninParams,
 ): Promise<User> => {
   return await fetcher(
     `${context.apiRootUrl.replace(/\/$/g, '')}/auth/signin`,
@@ -18,7 +18,7 @@ const signin = async (
         Accept: 'application/json',
         'content-Type': 'application/json',
       },
-      body: JSON.stringify(params)
+      body: JSON.stringify(params),
     },
   )
 }

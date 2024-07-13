@@ -3,7 +3,7 @@ export const fetcher = async (
   init?: RequestInit,
   //eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): Promise<any> => {
-  const res = await fetch(resource,init)
+  const res = await fetch(resource, init)
 
   if (!res.ok) {
     const errorRes = await res.json()

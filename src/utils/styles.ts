@@ -3,6 +3,10 @@
 import { theme } from 'themes'
 import type { ResponsiveProp, Responsive } from 'types'
 
+declare module 'styled-components' {
+  export interface DefaultTheme extends AppTheme {}
+}
+
 // Themeの型
 export type AppTheme = typeof theme
 
